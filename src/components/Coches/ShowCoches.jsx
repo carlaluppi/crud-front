@@ -30,6 +30,7 @@ function ShowCoches() {
             <table>
                 <thead>
                     <tr>
+                        <th>Propietario</th>
                         <th>Marca</th>
                         <th>Modelo</th>
                         <th>Matrícula</th>
@@ -39,6 +40,7 @@ function ShowCoches() {
                     {
                         coches.map( (coche) => (
                             <tr key={coches.id}>
+                                <td>{coche.propietario_id}</td>
                                 <td>{coche.marca}</td>
                                 <td>{coche.modelo}</td>
                                 <td>{coche.matricula}</td>
