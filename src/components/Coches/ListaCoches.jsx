@@ -28,7 +28,7 @@ const ListaCoches = ({propietarioId}) => {
         <div>
             <div className="flex items-center justify-center min-h-screen col-6 ">
             <div className="w-full max-w-screen-md">
-            <div className="text-2xl font-bold mb-4"> Lista coches </div>
+            <div className="text-2xl font-bold mb-4"> Lista de coches </div>
 
                 <table className="min-w-full divide-y divide-gray-200 mb-4">
                     <thead>
@@ -48,6 +48,7 @@ const ListaCoches = ({propietarioId}) => {
 
                         </tr>
                     ))}
+                    
                     </tbody>
                 </table>
         </div>

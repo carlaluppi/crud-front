@@ -52,7 +52,7 @@ function ShowCoches() {
 
     return (
         <div className="flex items-center justify-center min-h-screen">
-            <div className="w-full max-w-screen-md">
+            <div className="w-full max-w-screen-md"><h3 className="text-2xl font-bold mb-4"> Coches</h3>
                 <table className="w-full text-left border-collapse bg-gray-700">
                     <thead>
                         <tr>

@@ -118,7 +118,7 @@ function CreateCoche() {
                     className="py-2 px-4 hover:bg-gray-100 cursor-pointer"
                     onClick={() => selectPropietario(propietario)}
                   >
-                    {propietario.nombre} {propietario.dni}
+                    {propietario.nombre} 
                   </li>
                 ))}
               </ul>

@@ -13,11 +13,12 @@ export default class PublicRoute extends React.Component {
       return (
         <Router>
             <Routes>
-            <Route path='/coches' element= {<ShowCoches/>}/>
+            <Route path='/' element= {<ShowPropietarios/>}/>
+            <Route path='/coches' element= {<ShowCoches/>}/>  
             <Route path='/createcoche' element= {<CreateCoche/>}/>  
             <Route path='/edit/:id' element= {<EditCoche/>}/>
             <Route path='/propietarios' element= {<ShowPropietarios/>}/>
-            <Route path='/createprop' element= {<CreatePropietario/>}/>  
+            <Route path='/createpropietario' element= {<CreatePropietario/>}/>  
             <Route path='/editprop/:id' element= {<EditPropietario/>}/> 
 
             </Routes>
