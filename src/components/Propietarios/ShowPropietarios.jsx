@@ -2,11 +2,16 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import ListaCoches from '../Coches/ListaCoches';
+import ModalCoches from '../Coches/ModalCoches';
 
 const url = 'http://localhost:8000/api';
 
 function ShowPropietarios() {
     const [propietarios, setPropietarios] = useState([]);
+    
+    const [showModal, setShowModal] = useState(false);
+    const [selectedPropietarioId, setSelectedPropietarioId] = useState(null);
+  
 
     useEffect(() => {
         getAllPropietarios();
@@ -52,6 +57,7 @@ function ShowPropietarios() {
     };
 
     return (
+        
         <div className="flex items-center justify-center min-h-screen">
             <div className="w-full max-w-screen-md"> <h3 className="text-2xl font-bold mb-4"> Propietarios</h3>
                 <table className="w-full text-left border-collapse bg-gray-700">
@@ -81,6 +87,30 @@ function ShowPropietarios() {
                                     >
                                         Eliminar
                                     </button>
+                                   
+
+                                    <button
+                            onClick={() => {
+                                console.log("Botón clickeado");
+                                setShowModal(true);
+                                setSelectedPropietarioId(propietario.id);
+                            }}
+                            className="bg-red-500 hover:bg-red-400 text-white font-bold ml-2 py-1 px-2 rounded transition duration-300"
+                            >
+                            Ver coches
+                            </button>
+
+                    {showModal && (
+                        <ModalCoches
+                        propietarioId={selectedPropietarioId}
+                        onClose={() => {
+                            setShowModal(false);
+                            setSelectedPropietarioId(null);
+                        }}
+                        />
+                    )}
+
+                                    
                                 </td>
                             </tr>
                         ))}

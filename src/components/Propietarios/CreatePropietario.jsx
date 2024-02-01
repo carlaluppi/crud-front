@@ -122,6 +122,7 @@ function CreatePropietario() {
                 Guardar
                 </button>
             </div>
+            
             </form>
         </div>
 

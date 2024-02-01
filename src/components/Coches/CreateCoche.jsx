@@ -91,7 +91,7 @@ function CreateCoche() {
             <label className="mr-4"> Propietario  </label>
             
             <select
-                  className="border bg-gray-700 border-gray-300 py-2 px-4 rounded-l focus:outline-none focus:shadow-outline"
+                  className="border bg-gray-700 border-gray-700 py-2 px-4 rounded-l focus:outline-none focus:shadow-outline"
                   onChange={() => setShowPropietarios(!showPropietarios)}
                   value={selectedPropietario ? selectedPropietario.id : ''}
                 >
@@ -114,15 +114,19 @@ function CreateCoche() {
                 {propietarios.map((propietario) => (
                   <li
                     key={propietario.id}
-                    className="py-2 px-4 hover:bg-gray-100 cursor-pointer"
-                    onClick={() => selectPropietario(propietario)}
+                    className="py-2 px-4 hover:bg-gray-600 cursor-pointer"
+                    style={{ backgroundColor: '' }} 
+                    onClick={() => {
+                      selectPropietario(propietario);
+                      setShowPropietarios(false);
+                    }}
                   >
-                    {propietario.nombre} 
+                    {propietario.nombre}
                   </li>
                 ))}
               </ul>
-            )}
-          </div>
+                        )}
+                      </div>
 
           <div className="mb-3">
                 <label className="form-label "> Marca</label>
