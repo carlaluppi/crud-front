@@ -2,14 +2,12 @@
  
     background-color: rgb(17 24 39);
   color:white;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden; 
 
   
 }
 body {
-  height: 100vh;
   margin: 0;
-  overflow: hidden; 
+  min-height: 100vh;
 }
-

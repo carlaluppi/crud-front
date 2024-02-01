@@ -90,24 +90,23 @@ function CreateCoche() {
             <div className="flex items-center ">
             <label className="mr-4"> Propietario  </label>
             
-              <button 
-                className=" border bg-gray-700  border-gray-300 py-2 px-4 rounded-l focus:outline-none focus:shadow-outline"
-                onClick={() => setShowPropietarios(!showPropietarios)} 
-              >
-                {selectedPropietario ? `${selectedPropietario.nombre} ` : 'Seleccionar'} 
-              </button>
-              <div className="ml-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`h-5 w-5 text-gray-500 ${showPropietarios ? 'transform rotate-180' : ''}`}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+            <select
+                  className="border bg-gray-700 border-gray-300 py-2 px-4 rounded-l focus:outline-none focus:shadow-outline"
+                  onChange={() => setShowPropietarios(!showPropietarios)}
+                  value={selectedPropietario ? selectedPropietario.id : ''}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z"
-                  />
-                </svg>
+                  <option value="" disabled hidden>
+                    Seleccionar
+                  </option>
+                  {propietarios.map((propietario) => (
+                    <option key={propietario.id} value={propietario.id}>
+                      {propietario.nombre}
+                    </option>
+                  ))}
+                </select>
+
+              <div className="ml-1">
+                
               </div>
             </div>
             {showPropietarios && (
