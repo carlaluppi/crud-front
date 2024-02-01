@@ -72,20 +72,21 @@ function ShowCoches() {
                                 <td className="px-4 py-2">{coche.marca}</td>
                                 <td className="px-4 py-2">{coche.modelo}</td>
                                 <td className="px-4 py-2">{coche.matricula}</td>
-                                <td className="px-4 py-2">
-                                    <button
-                                        onClick={() => confirmEdit(coche.id)}
-                                        className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-1 px-2 rounded mr-2 transition duration-300"
-                                    >
-                                        Editar
-                                    </button>
-                                    <button
-                                        onClick={() => deleteCoche(coche.id)}
-                                        className="bg-red-500 hover:bg-red-400 text-white font-bold py-1 px-2 rounded transition duration-300"
-                                    >
-                                        Eliminar
-                                    </button>
-                                </td>
+                                <td className="px-4 py-2 flex items-center space-x-2">
+                            <button
+                                onClick={() => confirmEdit(coche.id)}
+                                className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-1 px-2 rounded transition duration-300"
+                            >
+                                Editar
+                            </button>
+                            <button
+                                onClick={() => deleteCoche(coche.id)}
+                                className="bg-red-500 hover:bg-red-400 text-white font-bold py-1 px-2 rounded transition duration-300"
+                            >
+                                Eliminar
+                            </button>
+                        </td>
+
                             </tr>
                         ))}
                     </tbody>
